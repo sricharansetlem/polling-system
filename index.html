@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Voting Poll System</title>
+  <link rel="stylesheet" href="polling.css" />
+</head>
+<body>
+
+  <h1>🗳️ Voting Poll System</h1>
+  <p class="subtitle">Create a poll, vote, and see instant results</p>
+
+  <!-- CREATE POLL -->
+  <div class="card" id="create-section">
+    <h2>Create Poll</h2>
+    <input type="text" id="poll-question" placeholder="Enter poll question..." />
+
+    <div class="options-list" id="options-list">
+      <div class="option-row">
+        <input type="text" placeholder="Option 1" class="opt-input" />
+        <button class="btn-remove" onclick="removeOption(this)">✕</button>
+      </div>
+      <div class="option-row">
+        <input type="text" placeholder="Option 2" class="opt-input" />
+        <button class="btn-remove" onclick="removeOption(this)">✕</button>
+      </div>
+    </div>
+
+    <button class="btn btn-secondary" onclick="addOption()">+ Add Option</button>
+    <button class="btn btn-primary" onclick="createPoll()">Create Poll</button>
+  </div>
+
+  <!-- VOTE -->
+  <div class="card" id="vote-section">
+    <h2>Cast Your Vote</h2>
+    <p class="poll-question" id="display-question"></p>
+    <div id="vote-options"></div>
+    <button class="btn btn-primary" onclick="submitVote()">Submit Vote</button>
+    <p class="voted-msg" id="voted-msg">✅ Your vote has been recorded!</p>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="card" id="results-section">
+    <h2>Live Results</h2>
+    <div id="results-list"></div>
+    <p class="total-votes" id="total-votes"></p>
+    <button class="btn btn-reset" onclick="resetPoll()">🔄 Create New Poll</button>
+  </div>
+
+  <script src="polling.js"></script>
+</body>
+</html>
